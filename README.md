@@ -207,9 +207,13 @@ Optional advanced metrics:
 By completing this project, you will have:
 
 ✔ A fully functional food classification ML model
+
 ✔ Preprocessed and well-engineered dataset
+
 ✔ Comparison of multiple ML algorithms
+
 ✔ Visualization dashboards & insights
+
 ✔ Clean and reusable project codebase
 
 ---
