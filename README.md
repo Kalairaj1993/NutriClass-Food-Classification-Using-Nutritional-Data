@@ -1,234 +1,224 @@
-# NutriClass-Food-Classification-Using-Nutritional-Data
-A complete end-to-end project that builds, evaluates, and documents machine learning models to classify food items into categories using nutritional (tabular) data such as calories, protein, carbs, fat, sugar and more. Includes data preprocessing, feature engineering, model comparison, visualizations, and artifacts for deployment
-
 ---
-## **📌 Project Overview**
 
-In a world increasingly focused on healthy living, understanding and classifying foods based on their nutritional composition is crucial. **NutriClass** is a machine-learning project aimed at classifying food items into categories using **tabular nutritional data** such as:
+# 🥗 NutriClass – Food Classification Using Nutritional Data
 
-* Calories
-* Protein
-* Carbohydrates
-* Fats
-* Sugar
-* (and any other available nutrients)
+An **end-to-end machine learning project** that builds, evaluates, and compares multiple traditional ML models to classify food items into predefined categories using **tabular nutritional data** such as calories, protein, carbohydrates, fat, sugar, fiber, sodium, and cholesterol.
 
-The goal is to build an accurate classification system and gain insights into the nutritional patterns behind each food category.
+The project covers **data preprocessing, feature engineering, model benchmarking, evaluation metrics, visualizations**, and **model artifact generation** for deployment readiness.
 
 ---
 
-# **🚀 Problem Statement**
+## 📌 Project Overview
 
-Design and develop a machine learning model that can accurately classify food items into predefined categories (e.g., fruits, vegetables, fast food, beverages, snacks) using their nutritional values.
-This involves:
+With the growing focus on healthy eating and nutrition awareness, accurately categorizing food based on nutritional composition is essential. **NutriClass** aims to automatically classify food items into meaningful food categories using nutritional attributes.
 
-* Understanding the dataset
-* Preprocessing and cleaning the data
-* Applying feature engineering techniques
-* Training multiple machine learning models
-* Comparing their performance
-* Providing insights based on the results
+This project demonstrates how **traditional machine learning algorithms** can effectively solve multi-class classification problems using structured nutritional data.
 
 ---
 
-# **🎯 Business Use Cases**
+## 🚀 Problem Statement
 
-### **1️⃣ Smart Dietary Applications**
+Design and develop a machine learning system that can accurately classify food items into predefined food categories (e.g., beverages, fruits, vegetables, grains, proteins, desserts) using their nutritional values.
 
-Recommend foods based on balanced nutrition profiles.
+The project involves:
 
-### **2️⃣ Health Monitoring Tools**
-
-Assist nutritionists in diet planning and categorizing food efficiently.
-
-### **3️⃣ Food Logging Systems**
-
-Automatically classify foods entered by users in health apps.
-
-### **4️⃣ Educational Platforms**
-
-Teach students how nutrients relate to food categories.
-
-### **5️⃣ Grocery / Meal Planning Apps**
-
-Auto-suggest healthier replacements in the same category.
+* Understanding nutritional data
+* Cleaning and preprocessing
+* Feature scaling and dimensionality analysis
+* Training multiple ML models
+* Comparing performance using robust evaluation metrics
+* Extracting insights from model behavior
 
 ---
 
-# **🧭 Project Workflow (Approach)**
+## 🎯 Business Use Cases
 
-## **1. Data Understanding & Exploration**
+### 1️⃣ Smart Dietary Applications
 
-* Load dataset and inspect basic structure.
-* Explore:
+Recommend foods based on balanced nutritional profiles.
+
+### 2️⃣ Health Monitoring Tools
+
+Assist dieticians and nutritionists in categorizing food efficiently.
+
+### 3️⃣ Food Logging Systems
+
+Automatically classify foods entered by users in health-tracking apps.
+
+### 4️⃣ Educational Platforms
+
+Demonstrate relationships between nutrients and food categories.
+
+### 5️⃣ Grocery & Meal Planning Apps
+
+Suggest healthier alternatives within the same food category.
+
+---
+
+## 🧭 Project Workflow
+
+### 1️⃣ Data Understanding & Exploratory Data Analysis (EDA)
+
+* Loaded nutritional dataset (CSV-based)
+* Examined:
 
   * Class distribution
   * Summary statistics
-  * Inter-class variation
+  * Feature correlations
 * Visualizations:
 
-  * Value counts
-  * Boxplots for nutrient ranges
-  * Pairplots for class separation
-* Identify if the dataset suffers from imbalance or noise.
+  * Class count plots
+  * Pairplots (sample-based)
+  * Correlation heatmaps
 
 ---
 
-## **2. Data Preprocessing**
+### 2️⃣ Data Preprocessing
 
-* Handle missing values
-
-  * Imputation (mean/median)
-  * Or remove rows if necessary
-
-* Outlier treatment
-
-  * Remove extreme values
-  * Or cap them using IQR/percentiles
-
-* Remove duplicate entries
-
-* Standardize or normalize numerical features
-
-  * `StandardScaler` or `MinMaxScaler`
+* Removed duplicate records
+* Handled missing values using **median imputation**
+* Treated outliers using **IQR-based capping**
+* Standardized numerical features using **StandardScaler**
+* Encoded target labels using **Label Encoding**
 
 ---
 
-## **3. Feature Engineering**
+### 3️⃣ Feature Engineering
 
-* Dimensionality reduction using:
+* Numerical feature selection
+* Optional dimensionality analysis using:
 
-  * **PCA** (Principal Component Analysis)
-
-* Feature selection techniques:
-
-  * SelectKBest
-  * Mutual Information
-
-* Encode target labels:
-
-  * Label Encoding
-  * One-Hot Encoding (if needed)
+  * **Principal Component Analysis (PCA)** (explained variance inspection)
+* Prepared clean feature matrix for modeling
 
 ---
 
-## **4. Model Selection & Training**
+### 4️⃣ Model Training & Selection
 
-Train and compare classic machine learning algorithms:
+The following machine learning models were trained and evaluated:
 
-| Model                            | Notes                         |
-| -------------------------------- | ----------------------------- |
-| **Logistic Regression**          | Good baseline, linear         |
-| **Decision Tree**                | Interpretable, non-linear     |
-| **Random Forest**                | Reduces overfitting, stable   |
-| **K-Nearest Neighbors**          | Distance-based                |
-| **Support Vector Machine**       | Works well in high dimensions |
-| **XGBoost**                      | High accuracy, boosting       |
-| **Gradient Boosting Classifier** | Strong traditional ML model   |
+| Model                  | Description                   |
+| ---------------------- | ----------------------------- |
+| Logistic Regression    | Strong linear baseline        |
+| Decision Tree          | Interpretable, non-linear     |
+| Random Forest          | Ensemble, reduced overfitting |
+| K-Nearest Neighbors    | Distance-based                |
+| Support Vector Machine | High-dimensional classifier   |
+| Gradient Boosting      | Strong ensemble learner       |
+| XGBoost (Optional)     | Boosting-based model          |
 
-Use **train-test split** and **k-fold cross-validation**.
-
----
-
-# **📊 Expected Results**
-
-* Comparison of ML models on the food classification dataset.
-* Identification of best-performing:
-
-  * Feature set (raw vs PCA)
-  * Model (based on accuracy and F1)
-* Clear visualizations:
-
-  * Heatmaps
-  * Confusion matrices
-  * Performance bar charts
+* Used **train-test split (80/20)**
+* Applied **5-fold cross-validation**
+* Ensured reproducibility with `random_state`
 
 ---
 
-# **📈 Evaluation Metrics**
+## 📊 Model Evaluation Metrics
 
-Evaluate every model on:
+Each model was evaluated using:
 
-* **Accuracy**
-* **Precision**
-* **Recall**
-* **F1-score**
-* **Confusion Matrix**
-
-Optional advanced metrics:
-
-* ROC-AUC (if binary)
-* Macro vs Micro F1 (if multi-class)
+* Accuracy
+* Precision (weighted)
+* Recall (weighted)
+* F1-score (weighted)
+* Confusion Matrix
 
 ---
 
-# **📝 Project Guidelines**
+## 📈 Consolidated Model Performance
 
-## **1. Coding Standards**
-
-* Follow consistent naming conventions.
-* Add clear comments and docstrings.
-* Structure code using modular Python files:
-
-  * `data_preprocessing.py`
-  * `feature_engineering.py`
-  * `train_models.py`
-  * `evaluate.py`
+| Model                 | CV Accuracy | Test Accuracy | Precision | Recall | F1-score |
+| --------------------- | ----------: | ------------: | --------: | -----: | -------: |
+| **Decision Tree**     |      0.9996 |    **1.0000** |    1.0000 | 1.0000 |   1.0000 |
+| **Gradient Boosting** |      0.9997 |    **1.0000** |    1.0000 | 1.0000 |   1.0000 |
+| Random Forest         |      0.9994 |        0.9998 |    0.9998 | 0.9998 |   0.9998 |
+| Logistic Regression   |      0.9851 |        0.9861 |    0.9859 | 0.9861 |   0.9860 |
+| SVM                   |      0.9839 |        0.9849 |    0.9847 | 0.9849 |   0.9847 |
+| KNN                   |      0.9519 |        0.9493 |    0.9492 | 0.9493 |   0.9490 |
 
 ---
 
-## **2. Version Control**
+## 🏆 Best Performing Models
 
-* Use Git for version tracking.
-* Keep a clean and organized repository:
-
-  * `notebooks/`
-  * `src/`
-  * `data/`
-  * `models/`
-  * `README.md`
+* **Decision Tree & Gradient Boosting**
+* Achieved **100% test accuracy and F1-score**
+* Demonstrated excellent class separation
 
 ---
 
-## **3. Testing & Validation**
+## 📊 Visualizations Included
 
-* Use **k-fold cross-validation** for robust evaluation.
-* Set `random_state` for reproducibility.
-* Track experiment results using:
-
-  * TensorBoard
-  * MLflow
-  * or simple CSV logs
-
----
-
-# **🎉 Final Deliverables**
-
-By completing this project, you will have:
-
-✔ A fully functional food classification ML model
-
-✔ Preprocessed and well-engineered dataset
-
-✔ Comparison of multiple ML algorithms
-
-✔ Visualization dashboards & insights
-
-✔ Clean and reusable project codebase
+✔ Class distribution plots
+✔ Correlation heatmaps
+✔ PCA explained variance plot
+✔ Model accuracy comparison bar chart
+✔ Confusion matrix heatmaps
+✔ Feature importance plots (tree-based models)
 
 ---
 
-## 🤝 **Contributions**
+## 🔍 Feature Importance Insights
 
-Pull requests and issue submissions are welcome.
+Tree-based models highlighted the following as dominant predictors:
+
+* Calories
+* Sugar
+* Fat
+* Protein
+* Carbohydrates
+
+These features strongly influence food category separation.
 
 ---
 
-## 📧 **Contact**
+## 💾 Model Artifacts
 
-For queries or collaboration:
-**Kalairaj — Data Analyst & Developer**
+Saved for deployment and reuse:
 
-📧 *(Mail to : rajfreelancer1993@gmail.com)*
+* Trained best model
+* Feature scaler
+* Label encoder
+
+Stored in the `artifacts/` directory using **Joblib**.
+
+---
+
+## 🧪 Project Structure
+
+```
+NutriClass-Food-Classification-Using-Nutritional-Data/
+│
+├── data/                # CSV dataset
+├── notebooks/           # Jupyter notebooks
+├── artifacts/           # Saved models & preprocessors
+├── src/                 # Modular source code (optional)
+├── README.md
+└── requirements.txt
+```
+
+---
+
+## 🔮 Future Enhancements
+
+* Feature ratios (protein/calories, fat/calories)
+* Class-weighted training for real-world imbalance
+* Stacking & ensemble blending
+* Model tracking using MLflow
+* Deployment using FastAPI or Flask
+* Replace synthetic data with real-world labeled datasets
+
+---
+
+## 🤝 Contributions
+
+Contributions, issues, and feature requests are welcome.
+
+---
+
+## 📧 Contact
+
+**Kalairaj**
+📊 Data Analyst & Developer
+📧 Email: **[rajfreelancer1993@gmail.com](mailto:rajfreelancer1993@gmail.com)**
 
 ---
