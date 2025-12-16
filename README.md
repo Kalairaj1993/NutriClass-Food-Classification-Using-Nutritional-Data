@@ -149,10 +149,15 @@ Each model was evaluated using:
 ## 📊 Visualizations Included
 
 ✔ Class distribution plots
+
 ✔ Correlation heatmaps
+
 ✔ PCA explained variance plot
+
 ✔ Model accuracy comparison bar chart
+
 ✔ Confusion matrix heatmaps
+
 ✔ Feature importance plots (tree-based models)
 
 ---
