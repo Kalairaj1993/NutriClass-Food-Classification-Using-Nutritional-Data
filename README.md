@@ -195,8 +195,6 @@ NutriClass-Food-Classification-Using-Nutritional-Data/
 │
 ├── data/                # CSV dataset
 ├── notebooks/           # Jupyter notebooks
-├── artifacts/           # Saved models & preprocessors
-├── src/                 # Modular source code (optional)
 ├── README.md
 └── requirements.txt
 ```
